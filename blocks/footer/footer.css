@@ -1,20 +1,60 @@
+/* Footer block – Bristan style */
+
 footer {
-  background-color: var(--light-color);
-  font-size: var(--body-font-size-xs);
+  background: var(--clr-navy);
+  color: rgb(255 255 255 / 75%);
+  font-size: var(--text-sm);
 }
 
-footer .footer > div {
-  margin: auto;
-  max-width: 1200px;
-  padding: 40px 24px 24px;
+footer .footer-content,
+footer > div {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding: var(--space-3xl) var(--gutter) var(--space-xl);
 }
 
-footer .footer p {
+footer h2,
+footer h3,
+footer h4 {
+  color: var(--clr-white);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: var(--space-md);
+}
+
+footer ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  padding: 0;
   margin: 0;
 }
 
-@media (width >= 900px) {
-  footer .footer > div {
-    padding: 40px 32px 24px;
+footer a:any-link {
+  color: rgb(255 255 255 / 60%);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+footer a:any-link:hover {
+  color: var(--clr-white);
+}
+
+footer hr {
+  border-color: rgb(255 255 255 / 12%);
+}
+
+footer p {
+  color: rgb(255 255 255 / 40%);
+  font-size: var(--text-xs);
+  margin: 0;
+}
+
+@media (width <= 768px) {
+  footer > div {
+    padding-block: var(--space-2xl) var(--space-lg);
   }
 }

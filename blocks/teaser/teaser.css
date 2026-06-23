@@ -1,27 +1,79 @@
+/* Teaser block – Bristan style */
+
 .teaser-wrapper {
   display: flex;
-  gap: 2rem;
+  gap: var(--space-2xl);
   align-items: center;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--clr-off-white);
+}
+
+.teaser-image {
+  flex: 0 0 45%;
+  overflow: hidden;
 }
 
 .teaser-image img {
   width: 100%;
-  height: auto;
-  display: block;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 400ms ease;
+}
+
+.teaser-wrapper:hover .teaser-image img {
+  transform: scale(1.03);
 }
 
 .teaser-content {
   flex: 1;
+  padding: var(--space-2xl) var(--space-2xl) var(--space-2xl) 0;
+}
+
+.teaser-content h2,
+.teaser-content h3 {
+  margin-bottom: var(--space-md);
+}
+
+.teaser-content p {
+  color: var(--clr-mid-grey);
+  margin-bottom: var(--space-lg);
 }
 
 .teaser-cta {
-  display: inline-block;
-  margin-top: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 0.75rem 1.5rem;
+  background: var(--clr-red);
+  color: var(--clr-white);
+  font-size: var(--text-sm);
   font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.teaser-cta:hover {
+  background: var(--clr-red-hover);
+  transform: translateY(-1px);
 }
 
 @media (width <= 768px) {
   .teaser-wrapper {
     flex-direction: column;
+    gap: 0;
+  }
+
+  .teaser-image {
+    flex: none;
+    width: 100%;
+    max-height: 240px;
+  }
+
+  .teaser-content {
+    padding: var(--space-xl);
   }
 }

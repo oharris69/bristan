@@ -1,33 +1,69 @@
-.columns > div {
-  display: flex;
-  flex-direction: column;
-}
+/* Columns block – Bristan style */
 
-.columns img {
-  width: 100%;
+.columns > div {
+  display: grid;
+  gap: var(--space-2xl);
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .columns > div > div {
-  order: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
 }
 
-.columns > div > .columns-img-col {
-  order: 0;
+.columns > div > div picture img {
+  border-radius: var(--radius-md);
+  width: 100%;
+  height: auto;
 }
 
-.columns > div > .columns-img-col img {
-  display: block;
+.columns > div > div h2,
+.columns > div > div h3 {
+  font-size: clamp(var(--text-xl), 2.5vw, var(--text-3xl));
 }
 
-@media (width >= 900px) {
+.columns > div > div a:any-link:not(.button) {
+  font-weight: 700;
+  font-size: var(--text-sm);
+  color: var(--clr-red);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: gap var(--transition-fast);
+}
+
+.columns > div > div a:any-link:not(.button)::after {
+  content: '→';
+}
+
+.columns > div > div a:any-link:not(.button):hover {
+  gap: 0.65rem;
+}
+
+/* Highlight variant */
+.columns.highlight {
+  background: var(--clr-navy);
+  color: var(--clr-white);
+}
+
+.columns.highlight h2,
+.columns.highlight h3,
+.columns.highlight p {
+  color: var(--clr-white);
+}
+
+.columns.highlight a:any-link:not(.button) {
+  color: var(--clr-white);
+}
+
+@media (width <= 768px) {
   .columns > div {
-    align-items: center;
-    flex-direction: unset;
-    gap: 24px;
-  }
-
-  .columns > div > div {
-    flex: 1;
-    order: unset;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
   }
 }

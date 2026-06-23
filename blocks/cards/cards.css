@@ -1,27 +1,96 @@
-.cards > ul {
+/* Cards block – Bristan style */
+
+.cards ul {
   list-style: none;
-  margin: 0;
-  padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+  padding: 0;
+  margin: 0;
 }
 
-.cards > ul > li {
-  border: 1px solid #dadada;
-  background-color: var(--background-color);
+.cards ul li {
+  background: var(--clr-white);
+  border: 1px solid var(--clr-light-grey);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
 }
 
-.cards .cards-card-body {
-  margin: 16px;
+.cards ul li:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
 }
 
 .cards .cards-card-image {
-  line-height: 0;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--clr-off-white);
 }
 
-.cards > ul > li img {
+.cards .cards-card-image img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  height: 100%;
   object-fit: cover;
+  transition: transform 400ms ease;
+}
+
+.cards ul li:hover .cards-card-image img {
+  transform: scale(1.04);
+}
+
+.cards .cards-card-body {
+  padding: var(--space-lg);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cards .cards-card-body h2,
+.cards .cards-card-body h3 {
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-sm);
+}
+
+.cards .cards-card-body p {
+  font-size: var(--text-sm);
+  color: var(--clr-mid-grey);
+  flex: 1;
+  margin-bottom: var(--space-md);
+}
+
+.cards .cards-card-body a:any-link {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--clr-red);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: auto;
+  transition: gap var(--transition-fast);
+}
+
+.cards .cards-card-body a:any-link::after {
+  content: '→';
+}
+
+.cards .cards-card-body a:any-link:hover {
+  gap: 0.6rem;
+}
+
+@media (width <= 1024px) {
+  .cards ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width <= 640px) {
+  .cards ul {
+    grid-template-columns: 1fr;
+  }
 }
