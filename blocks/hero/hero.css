@@ -9,8 +9,8 @@
   padding-block: 0;
 }
 
-.hero picture,
-.hero > div > div:first-child {
+/* All picture/image selectors together, least to most specific */
+.hero picture {
   position: absolute;
   inset: 0;
   z-index: 0;
@@ -36,6 +36,7 @@
   z-index: 1;
 }
 
+/* Content — least specific first */
 .hero > div {
   position: relative;
   z-index: 2;
@@ -61,7 +62,9 @@
   margin-bottom: var(--space-xl);
 }
 
-/* CTAs — EDS promotes strong > a to primary, em > a to secondary */
+/* CTA links — order: base states before hover states, less specific before more specific */
+.hero em > a,
+.hero p > em > a,
 .hero strong > a,
 .hero p > strong > a {
   display: inline-flex;
@@ -72,38 +75,24 @@
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  background: var(--clr-red);
-  color: var(--clr-white);
-  border: 2px solid var(--clr-red);
   text-decoration: none;
-  transition: background var(--transition-fast), transform var(--transition-fast);
   margin-inline-end: var(--space-md);
   margin-bottom: var(--space-sm);
-}
-
-.hero strong > a:hover,
-.hero p > strong > a:hover {
-  background: var(--clr-red-hover);
-  border-color: var(--clr-red-hover);
-  transform: translateY(-1px);
+  transition: background var(--transition-fast), transform var(--transition-fast);
 }
 
 .hero em > a,
 .hero p > em > a {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.875rem 1.75rem;
-  border-radius: var(--radius-sm);
-  font-size: var(--text-sm);
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
   background: transparent;
   color: var(--clr-white);
   border: 2px solid rgb(255 255 255 / 60%);
-  text-decoration: none;
-  transition: all var(--transition-fast);
-  margin-bottom: var(--space-sm);
+}
+
+.hero strong > a,
+.hero p > strong > a {
+  background: var(--clr-red);
+  color: var(--clr-white);
+  border: 2px solid var(--clr-red);
 }
 
 .hero em > a:hover,
@@ -113,14 +102,20 @@
   border-color: var(--clr-white);
 }
 
-/* Centred variant */
-.hero.centered > div {
-  text-align: center;
+.hero strong > a:hover,
+.hero p > strong > a:hover {
+  background: var(--clr-red-hover);
+  border-color: var(--clr-red-hover);
+  transform: translateY(-1px);
 }
 
-/* Short variant */
+/* Variants */
 .hero.short {
   min-height: 380px;
+}
+
+.hero.centered > div {
+  text-align: center;
 }
 
 @media (width <= 768px) {

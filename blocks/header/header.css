@@ -8,13 +8,6 @@ header .nav-wrapper {
   z-index: 100;
 }
 
-/* Top bar — audience switcher */
-.nav-sections ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
 nav[aria-label='Main navigation'] {
   max-width: var(--max-width);
   margin-inline: auto;
@@ -42,7 +35,6 @@ nav[aria-label='Main navigation'] {
   font-weight: 700;
   color: var(--clr-navy);
   margin: 0;
-  text-decoration: none;
 }
 
 /* Nav links */
@@ -51,6 +43,9 @@ nav[aria-label='Main navigation'] {
 }
 
 .nav-sections ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
   height: 72px;
 }
