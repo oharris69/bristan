@@ -9,7 +9,6 @@
   padding-block: 0;
 }
 
-/* All picture/image selectors together, least to most specific */
 .hero picture {
   position: absolute;
   inset: 0;
@@ -36,7 +35,6 @@
   z-index: 1;
 }
 
-/* Content — least specific first */
 .hero > div {
   position: relative;
   z-index: 2;
@@ -62,11 +60,21 @@
   margin-bottom: var(--space-xl);
 }
 
-/* CTA links — order: base states before hover states, less specific before more specific */
+/* All CTA base styles together, least specific first */
+.hero em > a {
+  background: transparent;
+  color: var(--clr-white);
+  border: 2px solid rgb(255 255 255 / 60%);
+}
+
+.hero strong > a {
+  background: var(--clr-red);
+  color: var(--clr-white);
+  border: 2px solid var(--clr-red);
+}
+
 .hero em > a,
-.hero p > em > a,
-.hero strong > a,
-.hero p > strong > a {
+.hero strong > a {
   display: inline-flex;
   align-items: center;
   padding: 0.875rem 1.75rem;
@@ -81,29 +89,14 @@
   transition: background var(--transition-fast), transform var(--transition-fast);
 }
 
-.hero em > a,
-.hero p > em > a {
-  background: transparent;
-  color: var(--clr-white);
-  border: 2px solid rgb(255 255 255 / 60%);
-}
-
-.hero strong > a,
-.hero p > strong > a {
-  background: var(--clr-red);
-  color: var(--clr-white);
-  border: 2px solid var(--clr-red);
-}
-
-.hero em > a:hover,
-.hero p > em > a:hover {
+/* Hover states after base states */
+.hero em > a:hover {
   background: var(--clr-white);
   color: var(--clr-navy);
   border-color: var(--clr-white);
 }
 
-.hero strong > a:hover,
-.hero p > strong > a:hover {
+.hero strong > a:hover {
   background: var(--clr-red-hover);
   border-color: var(--clr-red-hover);
   transform: translateY(-1px);

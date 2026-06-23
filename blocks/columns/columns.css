@@ -24,9 +24,9 @@
   font-size: clamp(var(--text-xl), 2.5vw, var(--text-3xl));
 }
 
-/* Link styles — base before hover, less specific before more specific */
-.columns > div > div a:any-link:not(.button),
-.columns.highlight > div > div a:any-link:not(.button) {
+/* Base link styles — least specific first */
+.columns > div > div a:any-link:not(.button) {
+  color: var(--clr-red);
   font-weight: 700;
   font-size: var(--text-sm);
   text-decoration: none;
@@ -38,17 +38,11 @@
   transition: gap var(--transition-fast);
 }
 
-.columns > div > div a:any-link:not(.button) {
-  color: var(--clr-red);
-}
-
-.columns > div > div a:any-link:not(.button)::after,
-.columns.highlight > div > div a:any-link:not(.button)::after {
+.columns > div > div a:any-link:not(.button)::after {
   content: '→';
 }
 
-.columns > div > div a:any-link:not(.button):hover,
-.columns.highlight > div > div a:any-link:not(.button):hover {
+.columns > div > div a:any-link:not(.button):hover {
   gap: 0.65rem;
 }
 
@@ -64,8 +58,17 @@
   color: var(--clr-white);
 }
 
+/* Highlight link overrides — after base link styles */
 .columns.highlight > div > div a:any-link:not(.button) {
   color: var(--clr-white);
+}
+
+.columns.highlight > div > div a:any-link:not(.button)::after {
+  content: '→';
+}
+
+.columns.highlight > div > div a:any-link:not(.button):hover {
+  gap: 0.65rem;
 }
 
 @media (width <= 768px) {
