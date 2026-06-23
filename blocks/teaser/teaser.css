@@ -20,7 +20,7 @@
   font-weight: 700;
 }
 
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .teaser-wrapper {
     flex-direction: column;
   }
