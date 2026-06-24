@@ -268,22 +268,35 @@
         "component": "reference",
         "valueType": "string",
         "name": "image",
-        "label": "Image",
+        "label": "Background image",
         "multi": false
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "imageAlt",
-        "label": "Alt",
-        "value": ""
       },
       {
         "component": "richtext",
         "name": "text",
-        "value": "",
-        "label": "Text",
-        "valueType": "string"
+        "label": "Heading + body text"
+      },
+      {
+        "component": "aem-content",
+        "name": "cta",
+        "label": "Primary CTA link"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "ctaText",
+        "label": "Primary CTA label"
+      },
+      {
+        "component": "aem-content",
+        "name": "cta2",
+        "label": "Secondary CTA link"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "cta2Text",
+        "label": "Secondary CTA label"
       }
     ]
   },
