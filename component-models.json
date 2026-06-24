@@ -142,6 +142,43 @@
     ]
   },
   {
+    "id": "banner",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "text",
+        "label": "Banner text (use bold for highlight)"
+      },
+      {
+        "component": "aem-content",
+        "name": "cta",
+        "label": "CTA link (optional)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "ctaText",
+        "label": "CTA label"
+      },
+      {
+        "component": "select",
+        "name": "style",
+        "label": "Colour",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Navy (default)",
+            "value": ""
+          },
+          {
+            "name": "Red",
+            "value": "red"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "card",
     "fields": [
       {

@@ -45,6 +45,7 @@
       "components": [
         "text",
         "image",
+        "banner",
         "button",
         "title",
         "hero",

@@ -1,0 +1,58 @@
+/* Banner block – Bristan style
+ * Used for the navy guarantee strip below the nav
+ * and any full-width announcement bars
+ */
+
+/* stylelint-disable no-descending-specificity */
+
+.banner {
+  background: var(--clr-navy);
+  color: var(--clr-white);
+  padding-block: 0;
+}
+
+.banner-inner {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding: 0.75rem var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.banner-text {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--clr-white);
+  margin: 0;
+}
+
+.banner-text strong {
+  color: #f5c842;
+  margin-inline-end: var(--space-sm);
+}
+
+.banner-link {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: #f5c842;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: opacity var(--transition-fast);
+}
+
+.banner-link:hover {
+  opacity: 0.8;
+}
+
+/* Red variant — for promotional banners */
+.banner.red {
+  background: var(--clr-red);
+}
+
+.banner.red .banner-link {
+  color: var(--clr-white);
+  text-decoration: underline;
+}
