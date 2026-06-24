@@ -1,6 +1,5 @@
 /* Header block – Bristan style */
 
-/* ── Wrapper ── */
 .nav-wrapper {
   background: var(--clr-white);
   box-shadow: 0 2px 8px rgb(0 0 0 / 8%);
@@ -9,7 +8,6 @@
   z-index: 100;
 }
 
-/* ── Main nav container ── */
 .nav-wrapper nav {
   max-width: var(--max-width);
   margin-inline: auto;
@@ -20,7 +18,7 @@
   gap: var(--space-xl);
 }
 
-/* ── Brand / Logo ── */
+/* ── Brand ── */
 .nav-brand {
   flex-shrink: 0;
 }
@@ -44,26 +42,28 @@
   letter-spacing: -0.02em;
 }
 
-/* ── Nav sections ── */
+/* ── Sections ── */
 .nav-sections {
   flex: 1;
 }
 
-.nav-sections .default-content-wrapper > ul {
+.nav-sections ul {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+.nav-sections > div > ul {
   display: flex;
   align-items: center;
   height: 80px;
-  gap: 0;
 }
 
-.nav-sections .default-content-wrapper > ul > li {
+.nav-sections > div > ul > li {
   position: relative;
 }
 
-.nav-sections .default-content-wrapper > ul > li > a {
+.nav-sections > div > ul > li > a {
   display: flex;
   align-items: center;
   height: 80px;
@@ -77,18 +77,17 @@
   white-space: nowrap;
 }
 
-.nav-sections .default-content-wrapper > ul > li > a:hover {
+.nav-sections > div > ul > li > a:hover {
   color: var(--clr-red);
   border-bottom-color: var(--clr-red);
 }
 
-.nav-sections .default-content-wrapper > ul > li[aria-expanded='true'] > a {
+.nav-sections > div > ul > li[aria-expanded='true'] > a {
   color: var(--clr-red);
   border-bottom-color: var(--clr-red);
 }
 
-/* Dropdown */
-.nav-sections .default-content-wrapper > ul > li.nav-drop > ul {
+.nav-sections > div > ul > li > ul {
   display: none;
   position: absolute;
   top: 80px;
@@ -98,16 +97,15 @@
   border: 1px solid var(--clr-light-grey);
   border-top: 3px solid var(--clr-red);
   box-shadow: var(--shadow-md);
-  list-style: none;
   padding: var(--space-sm) 0;
   z-index: 200;
 }
 
-.nav-sections .default-content-wrapper > ul > li.nav-drop[aria-expanded='true'] > ul {
+.nav-sections > div > ul > li[aria-expanded='true'] > ul {
   display: block;
 }
 
-.nav-sections .default-content-wrapper > ul > li.nav-drop > ul > li > a {
+.nav-sections > div > ul > li > ul > li > a {
   display: block;
   padding: 0.625rem var(--space-lg);
   font-size: var(--text-sm);
@@ -116,19 +114,19 @@
   transition: background var(--transition-fast), color var(--transition-fast);
 }
 
-.nav-sections .default-content-wrapper > ul > li.nav-drop > ul > li > a:hover {
+.nav-sections > div > ul > li > ul > li > a:hover {
   background: var(--clr-off-white);
   color: var(--clr-red);
 }
 
-/* ── Nav tools ── */
+/* ── Tools ── */
 .nav-tools {
   display: flex;
   align-items: center;
   gap: var(--space-md);
 }
 
-.nav-tools .default-content-wrapper > ul {
+.nav-tools ul {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -137,7 +135,7 @@
   gap: var(--space-md);
 }
 
-.nav-tools .default-content-wrapper > ul > li > a {
+.nav-tools ul li a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -151,7 +149,7 @@
   transition: color var(--transition-fast);
 }
 
-.nav-tools .default-content-wrapper > ul > li > a:hover {
+.nav-tools ul li a:hover {
   color: var(--clr-red);
 }
 
@@ -171,7 +169,6 @@
   gap: 5px;
 }
 
-.nav-hamburger button span,
 .nav-hamburger-icon {
   display: block;
   width: 24px;
@@ -202,19 +199,19 @@
     display: block;
   }
 
-  .nav-sections .default-content-wrapper > ul {
+  .nav-sections > div > ul {
     flex-direction: column;
     height: auto;
     align-items: stretch;
   }
 
-  .nav-sections .default-content-wrapper > ul > li > a {
+  .nav-sections > div > ul > li > a {
     height: 52px;
     border-bottom: 1px solid var(--clr-light-grey);
     padding-inline: var(--gutter);
   }
 
-  .nav-sections .default-content-wrapper > ul > li.nav-drop > ul {
+  .nav-sections > div > ul > li > ul {
     position: static;
     border: none;
     box-shadow: none;
