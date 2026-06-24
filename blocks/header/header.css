@@ -42,33 +42,6 @@
   letter-spacing: -0.02em;
 }
 
-/* ── Tools ── */
-.nav-tools {
-  display: flex;
-  align-items: center;
-  gap: var(--space-md);
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.nav-tools a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  color: var(--clr-navy);
-  text-decoration: none;
-  font-size: var(--text-sm);
-  font-weight: 600;
-  transition: color var(--transition-fast);
-}
-
-.nav-tools a:hover {
-  color: var(--clr-red);
-}
-
 /* ── Sections ── */
 .nav-sections {
   flex: 1;
@@ -143,6 +116,33 @@
 
 .nav-sections > div > ul > li > ul > li > a:hover {
   background: var(--clr-off-white);
+  color: var(--clr-red);
+}
+
+/* ── Tools — after all sections selectors ── */
+.nav-tools {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-tools a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: var(--clr-navy);
+  text-decoration: none;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  transition: color var(--transition-fast);
+}
+
+.nav-tools a:hover {
   color: var(--clr-red);
 }
 
