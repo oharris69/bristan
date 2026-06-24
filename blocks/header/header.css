@@ -44,40 +44,6 @@
   letter-spacing: -0.02em;
 }
 
-/* ── Nav tools — before nav-sections dropdowns ── */
-.nav-tools {
-  display: flex;
-  align-items: center;
-  gap: var(--space-md);
-}
-
-.nav-tools .default-content-wrapper > ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  gap: var(--space-md);
-}
-
-.nav-tools .default-content-wrapper > ul > li > a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  color: var(--clr-navy);
-  text-decoration: none;
-  border-radius: var(--radius-sm);
-  font-size: var(--text-sm);
-  font-weight: 600;
-  transition: color var(--transition-fast);
-}
-
-.nav-tools .default-content-wrapper > ul > li > a:hover {
-  color: var(--clr-red);
-}
-
 /* ── Nav sections ── */
 .nav-sections {
   flex: 1;
@@ -152,6 +118,40 @@
 
 .nav-sections .default-content-wrapper > ul > li.nav-drop > ul > li > a:hover {
   background: var(--clr-off-white);
+  color: var(--clr-red);
+}
+
+/* ── Nav tools ── */
+.nav-tools {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.nav-tools .default-content-wrapper > ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.nav-tools .default-content-wrapper > ul > li > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: var(--clr-navy);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  transition: color var(--transition-fast);
+}
+
+.nav-tools .default-content-wrapper > ul > li > a:hover {
   color: var(--clr-red);
 }
 
