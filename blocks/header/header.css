@@ -42,84 +42,32 @@
   letter-spacing: -0.02em;
 }
 
-/* ── Sections ── */
-.nav-sections {
-  flex: 1;
-}
-
-.nav-sections ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.nav-sections > div > ul {
-  display: flex;
-  align-items: center;
-  height: 80px;
-}
-
-.nav-sections > div > ul > li {
-  position: relative;
-}
-
-.nav-sections > div > ul > li > a {
-  display: flex;
-  align-items: center;
-  height: 80px;
-  padding-inline: var(--space-md);
-  font-size: var(--text-sm);
-  font-weight: 600;
-  color: var(--clr-navy);
-  text-decoration: none;
-  border-bottom: 3px solid transparent;
-  transition: color var(--transition-fast), border-color var(--transition-fast);
-  white-space: nowrap;
-}
-
-.nav-sections > div > ul > li > a:hover {
-  color: var(--clr-red);
-  border-bottom-color: var(--clr-red);
-}
-
-.nav-sections > div > ul > li[aria-expanded='true'] > a {
-  color: var(--clr-red);
-  border-bottom-color: var(--clr-red);
-}
-
-.nav-sections > div > ul > li > ul {
+/* ── Hamburger ── */
+.nav-hamburger {
   display: none;
-  position: absolute;
-  top: 80px;
-  left: 0;
-  min-width: 200px;
-  background: var(--clr-white);
-  border: 1px solid var(--clr-light-grey);
-  border-top: 3px solid var(--clr-red);
-  box-shadow: var(--shadow-md);
-  padding: var(--space-sm) 0;
-  z-index: 200;
+  margin-left: auto;
 }
 
-.nav-sections > div > ul > li[aria-expanded='true'] > ul {
+.nav-hamburger button {
+  background: none;
+  border: none;
+  padding: var(--space-sm);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.nav-hamburger-icon {
   display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--clr-navy);
+  border-radius: 2px;
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
 }
 
-.nav-sections > div > ul > li > ul > li > a {
-  display: block;
-  padding: 0.625rem var(--space-lg);
-  font-size: var(--text-sm);
-  color: var(--clr-navy);
-  text-decoration: none;
-  transition: background var(--transition-fast), color var(--transition-fast);
-}
-
-.nav-sections > div > ul > li > ul > li > a:hover {
-  background: var(--clr-off-white);
-  color: var(--clr-red);
-}
-
-/* ── Tools — after all sections selectors ── */
+/* ── Tools (low specificity — before sections) ── */
 .nav-tools {
   display: flex;
   align-items: center;
@@ -146,29 +94,88 @@
   color: var(--clr-red);
 }
 
-/* ── Hamburger ── */
-.nav-hamburger {
-  display: none;
-  margin-left: auto;
+/* ── Sections ── */
+.nav-sections {
+  flex: 1;
 }
 
-.nav-hamburger button {
-  background: none;
-  border: none;
-  padding: var(--space-sm);
-  cursor: pointer;
+.nav-sections ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-sections > div > ul {
   display: flex;
-  flex-direction: column;
-  gap: 5px;
+  align-items: center;
+  height: 80px;
 }
 
-.nav-hamburger-icon {
+.nav-sections > div > ul > li {
+  position: relative;
+}
+
+/* Base link — specificity 0,1,5 */
+.nav-sections > div > ul > li > a {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  padding-inline: var(--space-md);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--clr-navy);
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+  white-space: nowrap;
+}
+
+/* Hover — specificity 0,1,6 */
+.nav-sections > div > ul > li > a:hover {
+  color: var(--clr-red);
+  border-bottom-color: var(--clr-red);
+}
+
+/* Expanded state — specificity 0,2,5 */
+.nav-sections > div > ul > li[aria-expanded='true'] > a {
+  color: var(--clr-red);
+  border-bottom-color: var(--clr-red);
+}
+
+/* Dropdown list — specificity 0,1,6 */
+.nav-sections > div > ul > li > ul {
+  display: none;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  min-width: 200px;
+  background: var(--clr-white);
+  border: 1px solid var(--clr-light-grey);
+  border-top: 3px solid var(--clr-red);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-sm) 0;
+  z-index: 200;
+}
+
+/* Dropdown open — specificity 0,2,6 */
+.nav-sections > div > ul > li[aria-expanded='true'] > ul {
   display: block;
-  width: 24px;
-  height: 2px;
-  background: var(--clr-navy);
-  border-radius: 2px;
-  transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+/* Dropdown link — specificity 0,1,7 */
+.nav-sections > div > ul > li > ul > li > a {
+  display: block;
+  padding: 0.625rem var(--space-lg);
+  font-size: var(--text-sm);
+  color: var(--clr-navy);
+  text-decoration: none;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+/* Dropdown link hover — specificity 0,1,8 */
+.nav-sections > div > ul > li > ul > li > a:hover {
+  background: var(--clr-off-white);
+  color: var(--clr-red);
 }
 
 /* ── Mobile ── */
